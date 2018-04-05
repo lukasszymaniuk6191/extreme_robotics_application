@@ -1,0 +1,5 @@
+com/lukas/er/RestApiControllerTest.class
+com/lukas/er/FileWatcherServiceTest.class
+com/lukas/er/FileDownoladerServiceTests.class
+com/lukas/er/TableDataBaseServiceTest.class
+com/lukas/er/LinearRegressionServiceTest.class

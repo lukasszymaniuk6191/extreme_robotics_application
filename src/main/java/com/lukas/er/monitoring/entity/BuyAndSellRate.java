@@ -1,5 +1,6 @@
 package com.lukas.er.monitoring.entity;
 
+
 import lombok.*;
 
 import javax.persistence.*;

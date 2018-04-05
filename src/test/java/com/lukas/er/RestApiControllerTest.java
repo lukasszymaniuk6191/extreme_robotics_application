@@ -20,7 +20,9 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Calendar;
 
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.mockito.Mockito.*;
@@ -56,34 +58,36 @@ public class RestApiControllerTest {
     @Test
     public void getDataAverageRatesAllCorrectTest() throws Exception {
         RateDataDto rateDataDto_1 = RateDataDto.builder()
-                .tableDate(Date.valueOf("2018-04-04"))
+                .tableDate(Date.valueOf(getCurrentDate()))
                 .currency("bat (Tajlandia)")
                 .code("THB")
                 .mid("0.1096")
                 .build();
         RateDataDto rateDataDto_2 = RateDataDto.builder()
-                .tableDate(Date.valueOf("2018-04-04"))
+                .tableDate(Date.valueOf(getCurrentDate()))
                 .currency("dolar amerykański")
                 .code("USD")
                 .mid("3.4177")
                 .build();
-        when(averangeRatesRepositoryMock.getAllAverageRateByDate(Date.valueOf("2018-04-04")))
+        when(averangeRatesRepositoryMock.getAllAverageRateByDate(Date.valueOf(getCurrentDate())))
                 .thenReturn(Arrays.asList(rateDataDto_1, rateDataDto_2));
+
+        restApiController.setAverangeRatesRepository(averangeRatesRepositoryMock);
 
         mockMvc.perform(get("/api/current/average_rates/all"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(jsonPath("$", hasSize(2)))
-                .andExpect(jsonPath("$[0].tableDate").value("2018-04-04"))
+                .andExpect(jsonPath("$[0].tableDate").value(getCurrentDate()))
                 .andExpect(jsonPath("$[0].currency").value("bat (Tajlandia)"))
                 .andExpect(jsonPath("$[0].code").value("THB"))
                 .andExpect(jsonPath("$[0].mid").value("0.1096"))
-                .andExpect(jsonPath("$[1].tableDate").value("2018-04-04"))
+                .andExpect(jsonPath("$[1].tableDate").value(getCurrentDate()))
                 .andExpect(jsonPath("$[1].currency").value("dolar amerykański"))
                 .andExpect(jsonPath("$[1].code").value("USD"))
                 .andExpect(jsonPath("$[1].mid").value("3.4177"));
 
-        verify(averangeRatesRepositoryMock, times(1)).getAllAverageRateByDate(Date.valueOf("2018-04-04"));
+        verify(averangeRatesRepositoryMock, times(1)).getAllAverageRateByDate(Date.valueOf(getCurrentDate()));
 
 
     }
@@ -188,14 +192,14 @@ public class RestApiControllerTest {
     @Test
     public void getDataTradingRatesAllCorrectTest() throws Exception {
         TradingRateDataDto tradingRateDataDto_1 = TradingRateDataDto.builder()
-                .tableDate(Date.valueOf("2018-04-04"))
+                .tableDate(Date.valueOf(getCurrentDate()))
                 .currency("dolar amerykański")
                 .code("USD")
                 .bid("3.3798")
                 .ask("3.448")
                 .build();
         TradingRateDataDto tradingRateDataDto_2 = TradingRateDataDto.builder()
-                .tableDate(Date.valueOf("2018-04-04"))
+                .tableDate(Date.valueOf(getCurrentDate()))
                 .currency("dolar australijski")
                 .code("AUD")
                 .bid("2.6025")
@@ -203,7 +207,7 @@ public class RestApiControllerTest {
                 .build();
 
 
-        when(buyAndSellRateRepositoryMock.getAllTraidingRateByDate(Date.valueOf("2018-04-04")))
+        when(buyAndSellRateRepositoryMock.getAllTraidingRateByDate(Date.valueOf(getCurrentDate())))
                 .thenReturn(Arrays.asList(tradingRateDataDto_1, tradingRateDataDto_2));
 
         mockMvc.perform(get("/api/current/trading_rates/all"))
@@ -211,19 +215,19 @@ public class RestApiControllerTest {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(jsonPath("$", hasSize(2)))
 
-                .andExpect(jsonPath("$[0].tableDate").value("2018-04-04"))
+                .andExpect(jsonPath("$[0].tableDate").value(getCurrentDate()))
                 .andExpect(jsonPath("$[0].currency").value("dolar amerykański"))
                 .andExpect(jsonPath("$[0].code").value("USD"))
                 .andExpect(jsonPath("$[0].bid").value("3.3798"))
                 .andExpect(jsonPath("$[0].ask").value("3.448"))
 
-                .andExpect(jsonPath("$[1].tableDate").value("2018-04-04"))
+                .andExpect(jsonPath("$[1].tableDate").value(getCurrentDate()))
                 .andExpect(jsonPath("$[1].currency").value("dolar australijski"))
                 .andExpect(jsonPath("$[1].code").value("AUD"))
                 .andExpect(jsonPath("$[1].bid").value("2.6025"))
                 .andExpect(jsonPath("$[1].ask").value("2.6551"));
 
-        verify(buyAndSellRateRepositoryMock, times(1)).getAllTraidingRateByDate(Date.valueOf("2018-04-04"));
+        verify(buyAndSellRateRepositoryMock, times(1)).getAllTraidingRateByDate(Date.valueOf(getCurrentDate()));
     }
 
     @Test
@@ -326,6 +330,12 @@ public class RestApiControllerTest {
                 .getTradingRatesDataByCodeAndTableDateBetween("USD", Date.valueOf("2018-03-28"), Date.valueOf("2018-03-30"));
 
 
+    }
+
+    public String getCurrentDate() {
+        Calendar cal = Calendar.getInstance();
+        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+        return format1.format(cal.getTime());
     }
 
 

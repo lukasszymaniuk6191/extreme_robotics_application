@@ -50,7 +50,9 @@ public class RestApiController {
         return linearRegressionService.calculateAverageRatelinearRegression(rateDataDtoList);
     }
 
-    @GetMapping(path = "/current/average_rates/all", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    //@GetMapping(path = "/current/average_rates/all", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+
+    @GetMapping("/current/average_rates/all")
     public List<RateDataDto> getCurrentDataAverageRatesAll() {
         List<RateDataDto> rateDataDtoList = averangeRatesRepository
                 .getAllAverageRateByDate(Date.valueOf(getCurrentDate()));
