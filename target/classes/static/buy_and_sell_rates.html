@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en"  ng-app="rootApp2">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" type="text/css" href="css/chart.css">
+    <link rel="stylesheet" type="text/css" href="css/rates.css">
+</head>
+<body >
+    <div>
+	    <div id="header">
+	        <div class="span12">
+	                    <div class="span6">
+	                        <h1 class="muted">NBP</h1>
+	                    </div>
+	                    <div class="span4 offset2" style="margin-top:15px;">
+	                        <button class="btn pull-right" type="button">Sign In</button>
+	                    </div>    
+	        </div>
+	    </div>
+	    
+	    <nav class="navbar navbar-inverse">
+	        <div class="container-fluid">
+	             <ul class="nav navbar-nav">
+	              <li><a href="http://localhost:8080/average_rates">Kursy średnie walut obcych</a></li>
+	              <li class="active"><a href="http://localhost:8080/traiding_rates">Kurs kupna i sprzedaży walut obcych</a></li>
+	            </ul>
+	      </div>
+	    </nav>
+    </div>
+
+<div ng-controller="buyAndSellRatesCtrl" ng-init="getDataBuyAndSellRatesFromRestApi()">
+
+
+	<div class="words_table">
+		<table class="table">
+		  <thead class="thead-inverse">
+		 	<tr>
+		      <th></th>
+              <th><input ng-model="search.currency"  placeholder="Nazwa - filtruj"/></th>
+		      <th><input ng-model="search.code"  placeholder="Kod - filtruj "/></th>
+		      <th><input ng-model="search.bid"   placeholder="Kurs kupna - filtruj "/></th>
+               <th><input ng-model="search.ask"   placeholder="Kurs sprzedaży - filtruj"/></th>
+		    </tr>	
+		  </thead>			
+		  <thead class="thead-inverse" style="background: black; color:white">
+		    <tr>
+		      <th>Wybierz</th>
+		      <th>Nazwa waluty</th>
+		      <th>Kurs waluty</th>
+              <th>Kurs kupna</th>
+              <th>Kurs sprzedaży</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr ng-repeat="buyAndSellRate in buyAndSellRates | filter:search" >
+		      <th scope="row">
+                 <input type="checkbox" ng-model="selectedObjs" value="{{buyAndSellRate}}"
+                             ng-checked="buyAndSellRate.selected"
+                             ng-click="getCheckedObjectData(buyAndSellRate)">
+              </th>
+              <td>{{buyAndSellRate.currency}}</td>
+		      <td>{{buyAndSellRate.code}}</td>
+              <td>{{buyAndSellRate.bid}}</td>
+              <td>{{buyAndSellRate.ask}}</td>
+		    </tr>
+		  </tbody>
+		</table>
+
+
+        <div ng-controller="chartCtrl">
+
+      <br>
+        <center>
+            <h1>Ustaw przedział dat "rrrr-mm-dd"</h1>
+            <form class="form-inline" ng-submit="getTradingRatesFromRestApi(codes)">
+              <label class="sr-only" for="inlineFormInput">Name</label>
+              <input type="text" ng-model="startDate" name="startDate" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Start date">
+
+              <label class="sr-only" for="inlineFormInput">Name</label>
+              <input type="text" ng-model="stopDate" name="stopDate"  class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput2" placeholder="Stop date">
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </center>
+            <br>
+        
+    <center>
+        <div  id="resizable2">
+            <div   zingchart id="chart-1" zc-json="jsonTradingRateBids" zc-width="100%" zc-height="100%"></div>
+            <br>
+            <div   zingchart id="chart-2" zc-json="jsonTradingRateAsks" zc-width="100%" zc-height="100%"></div>
+        </div>
+
+
+
+    </center>
+
+        </div>
+    </div>
+  
+    
+    
+    
+ </div>
+
+  
+
+
+ 
+    <script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
+    <script src = "https://cdn.zingchart.com/zingchart.min.js" ></script>  
+    <script src = "https://cdn.zingchart.com/angular/zingchart-angularjs.js" ></script>  
+     <script type="text/javascript" src="js/buy_and_sell_rates.js"></script> 
+    <script type="text/javascript" src="js/chart2.js"></script>
+   
+     <script type="text/javascript" src="js/rootApp2.js"></script>
+</body>
+</html>

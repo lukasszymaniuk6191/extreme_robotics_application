@@ -1,0 +1,354 @@
+"2018-04-04 19:16:42 [main] INFO  c.l.er.ExtremeRoboticsApplication - Starting ExtremeRoboticsApplication on lenovo-Lenovo-V110-15ISK with PID 7407 (/home/lenovo/Desktop/java/projects/extreme_robotics/target/classes started by lenovo in /home/lenovo/Desktop/java/projects/extreme_robotics)
+""2018-04-04 19:16:42 [main] INFO  c.l.er.ExtremeRoboticsApplication - No active profile set, falling back to default profiles: default
+""2018-04-04 19:16:42 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3549bca9: startup date [Wed Apr 04 19:16:42 CEST 2018]; root of context hierarchy
+""2018-04-04 19:16:44 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$dd36f91b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+""2018-04-04 19:16:44 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2018-04-04 19:16:44 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2018-04-04 19:16:44 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.28
+""2018-04-04 19:16:45 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+""2018-04-04 19:16:45 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2018-04-04 19:16:45 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+""2018-04-04 19:16:45 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2018-04-04 19:16:45 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2018-04-04 19:16:45 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+""2018-04-04 19:16:45 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+""2018-04-04 19:16:45 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2018-04-04 19:16:45 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2018-04-04 19:16:45 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+""2018-04-04 19:16:45 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+""2018-04-04 19:16:45 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.14.Final}
+""2018-04-04 19:16:45 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+""2018-04-04 19:16:45 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+""2018-04-04 19:16:45 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+""2018-04-04 19:16:45 [main] INFO  o.h.e.j.e.i.LobCreatorBuilderImpl - HHH000422: Disabling contextual LOB creation as connection was null
+""2018-04-04 19:16:45 [main] INFO  org.hibernate.type.BasicTypeRegistry - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@5d508d22
+""2018-04-04 19:16:46 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2018-04-04 19:16:46 [main] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+""2018-04-04 19:16:47 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2018-04-04 19:16:47 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+""2018-04-04 19:16:47 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+""2018-04-04 19:16:47 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+""2018-04-04 19:16:47 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 
+""2018-04-04 19:16:47 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2018-04-04 19:16:47 [main] INFO  c.l.er.ExtremeRoboticsApplication - Started ExtremeRoboticsApplication in 5.758 seconds (JVM running for 6.978)
+""2018-04-04 19:16:50 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:16:50 [my-scheduled-task-pool-2] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:16:51 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:16:51 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:16:51 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:17:00 [my-scheduled-task-pool-2] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:17:00 [my-scheduled-task-pool-3] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:17:03 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:17:03 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:17:03 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:17:10 [my-scheduled-task-pool-4] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:17:10 [my-scheduled-task-pool-5] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:17:12 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:17:12 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:17:20 [my-scheduled-task-pool-7] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:17:20 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:17:21 [my-scheduled-task-pool-7] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:17:21 [my-scheduled-task-pool-7] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:17:21 [my-scheduled-task-pool-7] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:17:30 [my-scheduled-task-pool-4] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:17:30 [my-scheduled-task-pool-2] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:17:33 [my-scheduled-task-pool-4] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:17:33 [my-scheduled-task-pool-4] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:17:33 [my-scheduled-task-pool-4] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:17:40 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:17:40 [my-scheduled-task-pool-3] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:17:42 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:17:42 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:17:42 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:17:50 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:17:51 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:17:51 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:17:54 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:17:54 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:18:00 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:18:00 [my-scheduled-task-pool-8] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:18:03 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:18:03 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:18:03 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:18:10 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:18:10 [my-scheduled-task-pool-7] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:18:12 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:18:12 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:18:12 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:18:20 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:18:20 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:18:21 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:18:21 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:18:21 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:18:31 [my-scheduled-task-pool-9] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:18:31 [my-scheduled-task-pool-8] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:18:33 [my-scheduled-task-pool-9] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:18:33 [my-scheduled-task-pool-9] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:18:33 [my-scheduled-task-pool-9] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:18:40 [my-scheduled-task-pool-4] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:18:40 [my-scheduled-task-pool-10] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:18:42 [my-scheduled-task-pool-3] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:18:42 [my-scheduled-task-pool-3] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:18:42 [my-scheduled-task-pool-3] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:18:50 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:18:50 [Thread-3] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3549bca9: startup date [Wed Apr 04 19:16:42 CEST 2018]; root of context hierarchy
+""2018-04-04 19:18:50 [Thread-3] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+""2018-04-04 19:18:50 [Thread-3] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+""2018-04-04 19:18:50 [Thread-3] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2018-04-04 19:18:50 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2018-04-04 19:18:50 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2018-04-04 19:18:53 [main] INFO  c.l.er.ExtremeRoboticsApplication - Starting ExtremeRoboticsApplication on lenovo-Lenovo-V110-15ISK with PID 7788 (/home/lenovo/Desktop/java/projects/extreme_robotics/target/classes started by lenovo in /home/lenovo/Desktop/java/projects/extreme_robotics)
+""2018-04-04 19:18:53 [main] INFO  c.l.er.ExtremeRoboticsApplication - No active profile set, falling back to default profiles: default
+""2018-04-04 19:18:54 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2f1de2d6: startup date [Wed Apr 04 19:18:54 CEST 2018]; root of context hierarchy
+""2018-04-04 19:18:55 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5425a3d3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+""2018-04-04 19:18:56 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2018-04-04 19:18:56 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2018-04-04 19:18:56 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.28
+""2018-04-04 19:18:56 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+""2018-04-04 19:18:56 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2018-04-04 19:18:56 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+""2018-04-04 19:18:56 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2018-04-04 19:18:56 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2018-04-04 19:18:56 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+""2018-04-04 19:18:56 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+""2018-04-04 19:18:56 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2018-04-04 19:18:56 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2018-04-04 19:18:56 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+""2018-04-04 19:18:56 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+""2018-04-04 19:18:56 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.14.Final}
+""2018-04-04 19:18:56 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+""2018-04-04 19:18:56 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+""2018-04-04 19:18:56 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+""2018-04-04 19:18:56 [main] INFO  o.h.e.j.e.i.LobCreatorBuilderImpl - HHH000422: Disabling contextual LOB creation as connection was null
+""2018-04-04 19:18:56 [main] INFO  org.hibernate.type.BasicTypeRegistry - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@2c0c4c0a
+""2018-04-04 19:18:57 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2018-04-04 19:18:57 [main] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+""2018-04-04 19:18:58 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2018-04-04 19:18:58 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+""2018-04-04 19:18:58 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+""2018-04-04 19:18:58 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+""2018-04-04 19:18:58 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 
+""2018-04-04 19:18:59 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2018-04-04 19:18:59 [main] INFO  c.l.er.ExtremeRoboticsApplication - Started ExtremeRoboticsApplication in 5.698 seconds (JVM running for 6.96)
+""2018-04-04 19:19:00 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:19:00 [my-scheduled-task-pool-2] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:19:03 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:19:03 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:19:03 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:19:10 [my-scheduled-task-pool-2] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:19:10 [my-scheduled-task-pool-4] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:19:12 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:19:12 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:19:12 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:19:20 [my-scheduled-task-pool-3] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:19:20 [my-scheduled-task-pool-5] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:19:21 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:19:21 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:19:21 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:19:30 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:19:30 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:19:33 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:19:33 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:19:33 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:19:33 [Thread-3] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2f1de2d6: startup date [Wed Apr 04 19:18:54 CEST 2018]; root of context hierarchy
+""2018-04-04 19:19:33 [Thread-3] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+""2018-04-04 19:19:33 [Thread-3] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+""2018-04-04 19:19:33 [Thread-3] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2018-04-04 19:19:33 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2018-04-04 19:19:33 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2018-04-04 19:34:29 [main] INFO  c.l.er.ExtremeRoboticsApplication - Starting ExtremeRoboticsApplication on lenovo-Lenovo-V110-15ISK with PID 9384 (/home/lenovo/Desktop/java/projects/extreme_robotics/target/classes started by lenovo in /home/lenovo/Desktop/java/projects/extreme_robotics)
+""2018-04-04 19:34:29 [main] INFO  c.l.er.ExtremeRoboticsApplication - No active profile set, falling back to default profiles: default
+""2018-04-04 19:34:29 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@525575: startup date [Wed Apr 04 19:34:29 CEST 2018]; root of context hierarchy
+""2018-04-04 19:34:31 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ed174fa0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+""2018-04-04 19:34:31 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2018-04-04 19:34:31 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2018-04-04 19:34:31 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.28
+""2018-04-04 19:34:31 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+""2018-04-04 19:34:32 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2018-04-04 19:34:32 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+""2018-04-04 19:34:32 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2018-04-04 19:34:32 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2018-04-04 19:34:32 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+""2018-04-04 19:34:32 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+""2018-04-04 19:34:32 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2018-04-04 19:34:32 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2018-04-04 19:34:32 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+""2018-04-04 19:34:32 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+""2018-04-04 19:34:32 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.14.Final}
+""2018-04-04 19:34:32 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+""2018-04-04 19:34:32 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+""2018-04-04 19:34:32 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+""2018-04-04 19:34:32 [main] INFO  o.h.e.j.e.i.LobCreatorBuilderImpl - HHH000422: Disabling contextual LOB creation as connection was null
+""2018-04-04 19:34:32 [main] INFO  org.hibernate.type.BasicTypeRegistry - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@79a13920
+""2018-04-04 19:34:33 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2018-04-04 19:34:33 [main] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+""2018-04-04 19:34:34 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2018-04-04 19:34:34 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+""2018-04-04 19:34:34 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+""2018-04-04 19:34:34 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+""2018-04-04 19:34:34 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 
+""2018-04-04 19:34:34 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2018-04-04 19:34:34 [main] INFO  c.l.er.ExtremeRoboticsApplication - Started ExtremeRoboticsApplication in 5.74 seconds (JVM running for 7.049)
+""2018-04-04 19:34:40 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:34:40 [my-scheduled-task-pool-2] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:34:42 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:34:42 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:34:42 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:34:51 [my-scheduled-task-pool-2] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:34:51 [my-scheduled-task-pool-4] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:34:54 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:34:54 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:34:54 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:35:00 [my-scheduled-task-pool-3] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:35:00 [my-scheduled-task-pool-2] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:35:03 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:35:03 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:35:03 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:35:10 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:35:10 [my-scheduled-task-pool-4] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:35:12 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:35:12 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:35:12 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:35:20 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:35:20 [my-scheduled-task-pool-5] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:35:21 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:35:21 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:35:21 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:35:30 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:35:30 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:35:33 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:35:33 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:35:33 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:35:40 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:35:40 [my-scheduled-task-pool-4] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:35:42 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:35:42 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:35:42 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:35:50 [my-scheduled-task-pool-7] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:35:50 [my-scheduled-task-pool-10] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:35:51 [my-scheduled-task-pool-7] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:35:51 [my-scheduled-task-pool-7] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:35:51 [my-scheduled-task-pool-7] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:36:00 [my-scheduled-task-pool-3] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:36:00 [my-scheduled-task-pool-9] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:36:03 [my-scheduled-task-pool-3] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:36:03 [my-scheduled-task-pool-3] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:36:03 [my-scheduled-task-pool-3] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:36:10 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:36:10 [my-scheduled-task-pool-5] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:36:12 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:36:12 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:36:12 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:36:20 [my-scheduled-task-pool-7] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:36:20 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:36:21 [my-scheduled-task-pool-7] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:36:21 [my-scheduled-task-pool-7] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:36:21 [my-scheduled-task-pool-7] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:36:30 [my-scheduled-task-pool-3] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:36:30 [my-scheduled-task-pool-9] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:36:33 [my-scheduled-task-pool-3] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:36:33 [my-scheduled-task-pool-3] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:36:33 [my-scheduled-task-pool-3] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:36:40 [my-scheduled-task-pool-3] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:36:40 [my-scheduled-task-pool-5] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:36:42 [my-scheduled-task-pool-3] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:36:42 [my-scheduled-task-pool-3] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:36:42 [my-scheduled-task-pool-3] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:36:50 [my-scheduled-task-pool-7] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:36:50 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:36:51 [my-scheduled-task-pool-8] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:36:51 [my-scheduled-task-pool-8] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:36:51 [my-scheduled-task-pool-8] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:37:00 [my-scheduled-task-pool-8] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:37:00 [my-scheduled-task-pool-9] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:37:03 [my-scheduled-task-pool-8] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:37:03 [my-scheduled-task-pool-8] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:37:03 [my-scheduled-task-pool-8] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:37:10 [my-scheduled-task-pool-8] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:37:10 [my-scheduled-task-pool-5] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:37:12 [my-scheduled-task-pool-7] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:37:12 [my-scheduled-task-pool-7] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:37:12 [my-scheduled-task-pool-7] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:37:20 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:37:20 [my-scheduled-task-pool-10] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:37:21 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:37:21 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:37:21 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:37:30 [my-scheduled-task-pool-3] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:37:30 [my-scheduled-task-pool-9] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:37:33 [my-scheduled-task-pool-3] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:37:33 [my-scheduled-task-pool-3] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:37:33 [my-scheduled-task-pool-3] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:37:40 [my-scheduled-task-pool-3] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:37:40 [my-scheduled-task-pool-5] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:37:42 [my-scheduled-task-pool-3] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:37:42 [my-scheduled-task-pool-3] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:37:42 [my-scheduled-task-pool-3] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:37:50 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:37:50 [my-scheduled-task-pool-10] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:37:51 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:37:51 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:37:51 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:38:00 [my-scheduled-task-pool-7] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:38:02 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:38:03 [my-scheduled-task-pool-2] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:38:03 [my-scheduled-task-pool-2] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:38:10 [my-scheduled-task-pool-2] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:38:10 [my-scheduled-task-pool-5] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:38:12 [my-scheduled-task-pool-8] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:38:12 [my-scheduled-task-pool-8] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:38:12 [my-scheduled-task-pool-8] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:38:20 [my-scheduled-task-pool-8] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:38:20 [my-scheduled-task-pool-9] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:38:21 [my-scheduled-task-pool-8] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:38:21 [my-scheduled-task-pool-8] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:38:21 [my-scheduled-task-pool-8] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:38:30 [my-scheduled-task-pool-8] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:38:30 [my-scheduled-task-pool-4] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:38:33 [my-scheduled-task-pool-8] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:38:33 [my-scheduled-task-pool-8] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:38:33 [my-scheduled-task-pool-8] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:38:40 [my-scheduled-task-pool-6] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:38:40 [my-scheduled-task-pool-10] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:38:42 [my-scheduled-task-pool-7] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:38:42 [my-scheduled-task-pool-7] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:38:42 [my-scheduled-task-pool-7] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:38:50 [my-scheduled-task-pool-3] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:38:50 [my-scheduled-task-pool-1] DEBUG c.l.e.m.s.MonitoringServiceImpl - [Monitoring   2018-04-04]    Files downloaded
+""2018-04-04 19:38:51 [my-scheduled-task-pool-2] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:38:51 [my-scheduled-task-pool-2] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:38:51 [my-scheduled-task-pool-2] DEBUG c.l.e.m.s.FileWatcherServiceImpl - [Monitoring   2018-04-04]    Entry was modified on log dir.
+""2018-04-04 19:38:59 [Thread-3] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@525575: startup date [Wed Apr 04 19:34:29 CEST 2018]; root of context hierarchy
+""2018-04-04 19:38:59 [Thread-3] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+""2018-04-04 19:38:59 [Thread-3] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+""2018-04-04 19:38:59 [Thread-3] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2018-04-04 19:38:59 [my-scheduled-task-pool-8] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task.
+"java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2037)
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2071)
+	at java.base/java.util.concurrent.LinkedBlockingDeque.takeFirst(LinkedBlockingDeque.java:483)
+	at java.base/java.util.concurrent.LinkedBlockingDeque.take(LinkedBlockingDeque.java:671)
+	at java.base/sun.nio.fs.AbstractWatchService.take(AbstractWatchService.java:118)
+	at com.lukas.er.monitoring.service.FileWatcherServiceImpl.detectChangesInFolder(FileWatcherServiceImpl.java:42)
+	at com.lukas.er.monitoring.service.MonitoringServiceImpl.monitoringChangesInFolder(MonitoringServiceImpl.java:36)
+	at jdk.internal.reflect.GeneratedMethodAccessor54.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:514)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:299)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+"2018-04-04 19:38:59 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2018-04-04 19:38:59 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+"
