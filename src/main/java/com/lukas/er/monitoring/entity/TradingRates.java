@@ -11,7 +11,7 @@ import java.io.Serializable;
 @Builder
 @ToString
 @Entity
-public class TradingRates implements Serializable{
+public class TradingRates implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

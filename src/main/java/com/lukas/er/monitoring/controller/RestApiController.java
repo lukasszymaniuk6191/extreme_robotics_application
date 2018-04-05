@@ -33,8 +33,7 @@ public class RestApiController {
     @Autowired
     public RestApiController(AverangeRatesRepository averangeRatesRepository,
                              BuyAndSellRateRepository buyAndSellRateRepository,
-                             LinearRegressionService linearRegressionService)
-    {
+                             LinearRegressionService linearRegressionService) {
         this.averangeRatesRepository = averangeRatesRepository;
         this.buyAndSellRateRepository = buyAndSellRateRepository;
         this.linearRegressionService = linearRegressionService;
@@ -42,9 +41,9 @@ public class RestApiController {
 
 
     @GetMapping(path = "/average_rates", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public List<RateDataDto> getAverageRatesByCodeAndDataRange(@Size(min=3, max=3) @RequestParam(required=true) String code,
-                                                               @ValidDate @RequestParam(required=true) String startDate,
-                                                               @ValidDate @RequestParam(required=true) String stopDate) throws ParseException {
+    public List<RateDataDto> getAverageRatesByCodeAndDataRange(@Size(min = 3, max = 3) @RequestParam(required = true) String code,
+                                                               @ValidDate @RequestParam(required = true) String startDate,
+                                                               @ValidDate @RequestParam(required = true) String stopDate) throws ParseException {
         List<RateDataDto> rateDataDtoList = averangeRatesRepository
                 .getRateDataByCodeAndTableDateBetween(
                         code, Date.valueOf(startDate), Date.valueOf(stopDate));
@@ -52,35 +51,32 @@ public class RestApiController {
     }
 
     @GetMapping(path = "/current/average_rates/all", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public List<RateDataDto> getCurrentDataAverageRatesAll()
-    {
+    public List<RateDataDto> getCurrentDataAverageRatesAll() {
         List<RateDataDto> rateDataDtoList = averangeRatesRepository
                 .getAllAverageRateByDate(Date.valueOf(getCurrentDate()));
         return rateDataDtoList;
     }
 
 
-    @GetMapping(path = "/trading_rates",  produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public List<TradingRateDataDto> getDataTraidingRatesByCodeAndDataRange(@Size(min=3, max=3) @RequestParam(required=true) String code,
-                                                         @ValidDate @RequestParam(required=true) String startDate,
-                                                         @ValidDate @RequestParam(required=true) String stopDate) throws ParseException {
-        List<TradingRateDataDto> tradingRateDataDtoList =buyAndSellRateRepository
+    @GetMapping(path = "/trading_rates", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public List<TradingRateDataDto> getDataTraidingRatesByCodeAndDataRange(@Size(min = 3, max = 3) @RequestParam(required = true) String code,
+                                                                           @ValidDate @RequestParam(required = true) String startDate,
+                                                                           @ValidDate @RequestParam(required = true) String stopDate) throws ParseException {
+        List<TradingRateDataDto> tradingRateDataDtoList = buyAndSellRateRepository
                 .getTradingRatesDataByCodeAndTableDateBetween(
                         code, Date.valueOf(startDate), Date.valueOf(stopDate));
         return linearRegressionService.calculateTradingRateLinearRegression(tradingRateDataDtoList);
     }
 
-    @GetMapping(path = "/current/trading_rates/all",  produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public List<TradingRateDataDto> getCurrentDataTraidingRatesAll()
-    {
-        List<TradingRateDataDto> tradingRateDataDtoList =buyAndSellRateRepository
+    @GetMapping(path = "/current/trading_rates/all", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public List<TradingRateDataDto> getCurrentDataTraidingRatesAll() {
+        List<TradingRateDataDto> tradingRateDataDtoList = buyAndSellRateRepository
                 .getAllTraidingRateByDate(Date.valueOf(getCurrentDate()));
         return tradingRateDataDtoList;
     }
 
 
-    public String getCurrentDate()
-    {
+    public String getCurrentDate() {
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
         return format1.format(cal.getTime());

@@ -9,25 +9,23 @@ import java.time.format.DateTimeFormatter;
 
 public class LoggerDto {
 
-    private  Logger logger;
+    private Logger logger;
     private String monitoringDate;
     private LocalDate localDate;
 
 
-    public LoggerDto(Class<?> cls){
+    public LoggerDto(Class<?> cls) {
         logger = LoggerFactory.getLogger(cls);
     }
 
-    public void debug(String debug)
-    {
+    public void debug(String debug) {
         monitoringDate = getCurrentDate();
-        logger.debug(monitoringDate+debug);
+        logger.debug(monitoringDate + debug);
     }
 
-    public String getCurrentDate()
-    {
+    public String getCurrentDate() {
         localDate = LocalDate.now();
-        return "[Monitoring   " +  DateTimeFormatter.ofPattern("yyy-MM-dd").format(localDate)+"]    ";
+        return "[Monitoring   " + DateTimeFormatter.ofPattern("yyy-MM-dd").format(localDate) + "]    ";
     }
 
 

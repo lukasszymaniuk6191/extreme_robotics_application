@@ -14,8 +14,8 @@ import java.util.List;
 @Builder
 @ToString
 @Entity
-@Table(name="buy_and_sell_rates")
-public class BuyAndSellRate implements Serializable{
+@Table(name = "buy_and_sell_rates")
+public class BuyAndSellRate implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,8 +27,8 @@ public class BuyAndSellRate implements Serializable{
     private Date tradingDate;
     private Date effectiveDate;
     private Date tableDate;
-    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "buy_and_sell_rate_id", referencedColumnName="id")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "buy_and_sell_rate_id", referencedColumnName = "id")
     List<TradingRates> rates = new ArrayList<>();
     private String fileName;
 

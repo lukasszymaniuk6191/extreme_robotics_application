@@ -24,6 +24,4 @@ public class Rates implements Serializable {
     private String mid;
 
 
-
-
 }

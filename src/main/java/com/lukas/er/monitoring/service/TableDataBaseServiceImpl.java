@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class TableDataBaseServiceImpl implements TableDataBaseService{
+public class TableDataBaseServiceImpl implements TableDataBaseService {
 
     private JsonObjectReaderService jsonObjectReaderService;
     private DataOfTheDownloadedFileDto dataOfTheDownloadedFileDto;
@@ -30,8 +30,7 @@ public class TableDataBaseServiceImpl implements TableDataBaseService{
     public TableDataBaseServiceImpl(JsonObjectReaderService jsonObjectReaderService,
                                     DataOfTheDownloadedFileDto dataOfTheDownloadedFileDto,
                                     AverangeRatesRepository averangeRatesRepository,
-                                    BuyAndSellRateRepository buyAndSellRatesRepository)
-    {
+                                    BuyAndSellRateRepository buyAndSellRatesRepository) {
         this.jsonObjectReaderService = jsonObjectReaderService;
         this.dataOfTheDownloadedFileDto = dataOfTheDownloadedFileDto;
         this.averangeRatesRepository = averangeRatesRepository;
@@ -41,8 +40,7 @@ public class TableDataBaseServiceImpl implements TableDataBaseService{
     public List<FileWatcherDataDto> updateDataInDb(List<FileWatcherDataDto> fileWatcherDataDtoList) throws ParseException, IOException {
         List<FileWatcherDataDto> fileWatcherList = new ArrayList<>();
 
-        for(FileWatcherDataDto fileWatcherDataDto:fileWatcherDataDtoList)
-        {
+        for (FileWatcherDataDto fileWatcherDataDto : fileWatcherDataDtoList) {
             fileWatcherList.add(this.detectChangesInFolder(fileWatcherDataDto));
         }
 
@@ -54,66 +52,57 @@ public class TableDataBaseServiceImpl implements TableDataBaseService{
         String fileName = "";
 
         if ("ENTRY_CREATE".equals(fileWatcherDataDto.getEventName())) {
-            event="FILE_NOT_ADDED";
+            event = "FILE_NOT_ADDED";
             fileName = "WRONG_FILENAME";
-            if(this.saveTable(fileWatcherDataDto.getFilename()))
-            {
+            if (this.saveTable(fileWatcherDataDto.getFilename())) {
                 fileName = fileWatcherDataDto.getFilename();
-                event = fileWatcherDataDto.getEventName()+"D";
+                event = fileWatcherDataDto.getEventName() + "D";
             }
         } else if ("ENTRY_MODIFY".equals(fileWatcherDataDto.getEventName())) {
 
         } else if ("ENTRY_DELETE".equals(fileWatcherDataDto.getEventName())) {
-            event="FILE_NOT_ADDED";
+            event = "FILE_NOT_ADDED";
             fileName = "WRONG_FILENAME";
-            if(this.deleteTable(fileWatcherDataDto.getFilename()))
-            {
+            if (this.deleteTable(fileWatcherDataDto.getFilename())) {
                 fileName = fileWatcherDataDto.getFilename();
-                event = fileWatcherDataDto.getEventName()+"D";
+                event = fileWatcherDataDto.getEventName() + "D";
             }
         }
 
-        return new FileWatcherDataDto(fileName,event);
+        return new FileWatcherDataDto(fileName, event);
     }
 
 
-    public boolean deleteTable(String fileName)
-    {
+    public boolean deleteTable(String fileName) {
         boolean fileDeleted = false;
 
-        if(/*fileName.contains("C_")*/fileNameIsCorrect(fileName, "C"))
-        {
+        if (/*fileName.contains("C_")*/fileNameIsCorrect(fileName, "C")) {
             buyAndSellRatesRepository.deleteBuyAndSellRateByFileName(fileName);
             fileDeleted = true;
-        } else if(/*fileName.contains("A_") || fileName.contains("B_")*/
-                fileNameIsCorrect(fileName, "A") || fileNameIsCorrect(fileName, "B"))
-        {
+        } else if (/*fileName.contains("A_") || fileName.contains("B_")*/
+                fileNameIsCorrect(fileName, "A") || fileNameIsCorrect(fileName, "B")) {
             averangeRatesRepository.deleteAverageRateByFileName(fileName);
             fileDeleted = true;
-        }
-        else{
+        } else {
             fileDeleted = false;
         }
 
         return fileDeleted;
     }
 
-    public boolean fileNameIsCorrect(String fileName, String tabName)
-    {
+    public boolean fileNameIsCorrect(String fileName, String tabName) {
 
         boolean tableNameIsCorrect = false;
         boolean dateIsCorrect = false;
         boolean fileTypeIsCorrect = false;
 
-        if(fileName.length()!=17)
-        {
+        if (fileName.length() != 17) {
             return false;
         }
 
         String[] str1 = fileName.split("_");
         String tableName = str1[0];
-        if(tableName.equals(tabName))
-        {
+        if (tableName.equals(tabName)) {
             tableNameIsCorrect = true;
         }
 
@@ -126,17 +115,16 @@ public class TableDataBaseServiceImpl implements TableDataBaseService{
             dateFormat.parse(date.trim());
             dateIsCorrect = true;
         } catch (java.text.ParseException e) {
-           dateIsCorrect = false;
+            dateIsCorrect = false;
         }
 
         String fileType = str2[1];
-        if(fileType.equals("json"))
-        {
+        if (fileType.equals("json")) {
             fileTypeIsCorrect = true;
         }
 
 
-        return ((tableNameIsCorrect==true) && (dateIsCorrect==true) && (fileTypeIsCorrect==true));
+        return ((tableNameIsCorrect == true) && (dateIsCorrect == true) && (fileTypeIsCorrect == true));
 
 
     }
@@ -148,26 +136,22 @@ public class TableDataBaseServiceImpl implements TableDataBaseService{
         String date = DateTimeFormatter.ofPattern("yyyy-MM-dd").format(localDate);
 
 
-        if(fileNameIsCorrect(fileName, "C"))
-        {
-            BuyAndSellRate buyAndSellRates = jsonObjectReaderService.getBuyAndSellRate(dataOfTheDownloadedFileDto.getDataPropertiesDto().getFilePath(),fileName);
+        if (fileNameIsCorrect(fileName, "C")) {
+            BuyAndSellRate buyAndSellRates = jsonObjectReaderService.getBuyAndSellRate(dataOfTheDownloadedFileDto.getDataPropertiesDto().getFilePath(), fileName);
             buyAndSellRates.setTableDate(Date.valueOf(date));
             buyAndSellRatesRepository.save(buyAndSellRates);
             fileSaved = true;
-        } else if(fileNameIsCorrect(fileName, "A") || fileNameIsCorrect(fileName, "B"))
-        {
-            AverageRate averageRate = jsonObjectReaderService.getAverageRate(dataOfTheDownloadedFileDto.getDataPropertiesDto().getFilePath(),fileName);
+        } else if (fileNameIsCorrect(fileName, "A") || fileNameIsCorrect(fileName, "B")) {
+            AverageRate averageRate = jsonObjectReaderService.getAverageRate(dataOfTheDownloadedFileDto.getDataPropertiesDto().getFilePath(), fileName);
             averageRate.setTableDate(Date.valueOf(date));
             averangeRatesRepository.save(averageRate);
             fileSaved = true;
-        }
-        else{
+        } else {
 
             fileSaved = false;
         }
         return fileSaved;
     }
-
 
 
     public void setJsonObjectReaderService(JsonObjectReaderService jsonObjectReaderService) {

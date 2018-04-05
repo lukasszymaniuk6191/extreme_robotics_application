@@ -40,14 +40,12 @@ public class FileWatcherServiceTest {
     public TemporaryFolder folder = new TemporaryFolder();
 
     @Before
-    public void init()
-    {
+    public void init() {
         dataOfTheDownloadedFileDto.getDataPropertiesDto().setFilePath(folder.getRoot().getPath());
     }
 
     @Test
     public void fileWatcherServiceCorrectTest() throws IOException, InterruptedException {
-
 
 
         List<FileWatcherDataDto> fileWatcherDataDtoList = new ArrayList<>();
@@ -62,7 +60,7 @@ public class FileWatcherServiceTest {
 
         fileWatcherDataDtoList = fileWatcherService.detectChangesInFolder();
 
-        assertEquals(3,fileWatcherDataDtoList.size());
+        assertEquals(3, fileWatcherDataDtoList.size());
         assertTrue(fileWatcherDataDtoList.contains(new FileWatcherDataDto("file1", "ENTRY_CREATE")));
         assertTrue(fileWatcherDataDtoList.contains(new FileWatcherDataDto("file2", "ENTRY_CREATE")));
         assertTrue(fileWatcherDataDtoList.contains(new FileWatcherDataDto("file3", "ENTRY_CREATE")));
@@ -70,19 +68,17 @@ public class FileWatcherServiceTest {
         assertFalse(fileWatcherDataDtoList.contains(new FileWatcherDataDto("file1", "ENTRY")));
 
 
-
         folder.delete();
-        fileWatcherDataDtoList=null;
+        fileWatcherDataDtoList = null;
         fileWatcherDataDtoList = fileWatcherService.detectChangesInFolder();
 
-        assertEquals(3,fileWatcherDataDtoList.size());
+        assertEquals(3, fileWatcherDataDtoList.size());
         assertTrue(fileWatcherDataDtoList.contains(new FileWatcherDataDto("file1", "ENTRY_DELETE")));
         assertTrue(fileWatcherDataDtoList.contains(new FileWatcherDataDto("file2", "ENTRY_DELETE")));
         assertTrue(fileWatcherDataDtoList.contains(new FileWatcherDataDto("file3", "ENTRY_DELETE")));
 
 
     }
-
 
 
 }

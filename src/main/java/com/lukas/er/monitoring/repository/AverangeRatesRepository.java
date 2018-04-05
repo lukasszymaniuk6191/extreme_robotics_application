@@ -19,17 +19,15 @@ public interface AverangeRatesRepository extends JpaRepository<AverageRate, Long
 
     @Query(value = "SELECT new com.lukas.er.monitoring.dto.RateDataDto(ar.tableDate,r.currency, r.code, r.mid)  FROM " +
             "AverageRate ar JOIN ar.rates r  WHERE r.code=:code " +
-            "AND ar.tableDate BETWEEN :startDate AND :stopDate ORDER BY ar.tableDate" )
+            "AND ar.tableDate BETWEEN :startDate AND :stopDate ORDER BY ar.tableDate")
     List<RateDataDto> getRateDataByCodeAndTableDateBetween(@Param("code") String code,
-                                                           @Param("startDate")Date starDate,
-                                                           @Param("stopDate")Date stopDate);
+                                                           @Param("startDate") Date starDate,
+                                                           @Param("stopDate") Date stopDate);
 
 
     @Query(value = "SELECT new com.lukas.er.monitoring.dto.RateDataDto(ar.tableDate,r.currency, r.code, r.mid)  FROM " +
             "AverageRate ar JOIN ar.rates r  WHERE ar.tableDate=:date ")
     List<RateDataDto> getAllAverageRateByDate(@Param("date") Date date);
-
-
 
 
 }

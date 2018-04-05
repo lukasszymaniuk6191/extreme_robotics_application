@@ -6,5 +6,6 @@ import java.io.IOException;
 
 public interface MonitoringService {
     void monitoringChangesInFolder() throws InterruptedException, IOException, ParseException;
+
     void downloadingTheFileFromUrl() throws IOException;
 }

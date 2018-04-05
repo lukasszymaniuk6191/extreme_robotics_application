@@ -21,10 +21,10 @@ public interface BuyAndSellRateRepository extends JpaRepository<BuyAndSellRate, 
     @Query(value = "SELECT new com.lukas.er.monitoring.dto.TradingRateDataDto(" +
             "basr.tableDate, r.currency, r.code, r.bid, r.ask)  FROM " +
             "BuyAndSellRate basr JOIN basr.rates r  WHERE r.code=:code " +
-            "AND basr.tableDate BETWEEN :startDate AND :stopDate ORDER BY basr.tableDate" )
+            "AND basr.tableDate BETWEEN :startDate AND :stopDate ORDER BY basr.tableDate")
     List<TradingRateDataDto> getTradingRatesDataByCodeAndTableDateBetween(@Param("code") String code,
-                                                                  @Param("startDate")Date starDate,
-                                                                  @Param("stopDate")Date stopDate);
+                                                                          @Param("startDate") Date starDate,
+                                                                          @Param("stopDate") Date stopDate);
 
 
     @Query(value = "SELECT new com.lukas.er.monitoring.dto.TradingRateDataDto(" +

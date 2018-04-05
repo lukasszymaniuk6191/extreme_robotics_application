@@ -23,7 +23,7 @@ import static org.junit.Assert.assertEquals;
 public class LinearRegressionServiceTest {
 
     @Autowired
-    private  LinearRegressionService linearRegressionService;
+    private LinearRegressionService linearRegressionService;
 
     @Test
     public void calculateAverageRateLinearRegressionTest() throws ParseException {
@@ -34,14 +34,14 @@ public class LinearRegressionServiceTest {
         rateDataDtoList.add(RateDataDto.builder().tableDate(Date.valueOf("2018-03-29"))
                 .currency("dolar amerykański").code("USD").mid("3.382").build());
 
-        assertEquals(rateDataDtoList.size(),2);
+        assertEquals(rateDataDtoList.size(), 2);
 
         linearRegressionService.calculateAverageRatelinearRegression(rateDataDtoList);
-        assertEquals(rateDataDtoList.size(),4);
+        assertEquals(rateDataDtoList.size(), 4);
 
         linearRegressionService.setPredictionNumberOfDays(10);
         linearRegressionService.calculateAverageRatelinearRegression(rateDataDtoList);
-        assertEquals(rateDataDtoList.size(),14);
+        assertEquals(rateDataDtoList.size(), 14);
     }
 
     @Test
@@ -53,16 +53,15 @@ public class LinearRegressionServiceTest {
         tradingRateDataDtoList.add(TradingRateDataDto.builder().tableDate(Date.valueOf("2018-03-29"))
                 .currency("dolar amerykański").code("USD").bid("3.382").ask("2.543").build());
 
-        assertEquals(tradingRateDataDtoList.size(),2);
+        assertEquals(tradingRateDataDtoList.size(), 2);
 
         linearRegressionService.calculateTradingRateLinearRegression(tradingRateDataDtoList);
-        assertEquals(tradingRateDataDtoList.size(),7);
+        assertEquals(tradingRateDataDtoList.size(), 7);
 
         linearRegressionService.setPredictionNumberOfDays(13);
         linearRegressionService.calculateTradingRateLinearRegression(tradingRateDataDtoList);
-        assertEquals(tradingRateDataDtoList.size(),20);
+        assertEquals(tradingRateDataDtoList.size(), 20);
     }
-
 
 
 }

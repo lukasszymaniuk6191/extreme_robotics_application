@@ -8,8 +8,7 @@ import lombok.*;
 @Builder
 @EqualsAndHashCode
 @ToString
-public class ExceptionDto
-{
+public class ExceptionDto {
     private String errCode;
     private String errClassName;
     private String errMsg;

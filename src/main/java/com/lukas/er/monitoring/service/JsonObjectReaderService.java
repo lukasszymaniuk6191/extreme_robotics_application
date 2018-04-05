@@ -9,6 +9,7 @@ import java.io.IOException;
 public interface JsonObjectReaderService {
 
     AverageRate getAverageRate(String filePath, String fileName) throws IOException, ParseException;
+
     BuyAndSellRate getBuyAndSellRate(String filePath, String fileName) throws IOException, ParseException;
 
 }

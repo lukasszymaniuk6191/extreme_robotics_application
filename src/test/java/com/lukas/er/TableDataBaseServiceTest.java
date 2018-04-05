@@ -44,10 +44,8 @@ public class TableDataBaseServiceTest {
     DataOfTheDownloadedFilePropertiesDto dataOfTheDownloadedFilePropertiesDto;
 
 
-
     @Before
-    public void setUp()
-    {
+    public void setUp() {
         tableDataBaseService.setBuyAndSellRatesRepository(buyAndSellRateRepositoryMock);
         tableDataBaseService.setAverangeRatesRepository(averangeRatesRepositoryMock);
         tableDataBaseService.setJsonObjectReaderService(jsonObjectReaderServiceMock);
@@ -56,49 +54,49 @@ public class TableDataBaseServiceTest {
     @Test
     public void tableDataBaseServiceCorrectTest() throws IOException, ParseException {
 
-        when(jsonObjectReaderServiceMock.getAverageRate(dataOfTheDownloadedFilePropertiesDto.getFilePath(),"A_2018-03-28.json"))
+        when(jsonObjectReaderServiceMock.getAverageRate(dataOfTheDownloadedFilePropertiesDto.getFilePath(), "A_2018-03-28.json"))
                 .thenReturn(new AverageRate());
-        when(jsonObjectReaderServiceMock.getAverageRate(dataOfTheDownloadedFilePropertiesDto.getFilePath(),"B_2018-03-28.json"))
+        when(jsonObjectReaderServiceMock.getAverageRate(dataOfTheDownloadedFilePropertiesDto.getFilePath(), "B_2018-03-28.json"))
                 .thenReturn(new AverageRate());
-        when(jsonObjectReaderServiceMock.getBuyAndSellRate(dataOfTheDownloadedFilePropertiesDto.getFilePath(),"C_2018-03-28.json"))
+        when(jsonObjectReaderServiceMock.getBuyAndSellRate(dataOfTheDownloadedFilePropertiesDto.getFilePath(), "C_2018-03-28.json"))
                 .thenReturn(new BuyAndSellRate());
 
         List<FileWatcherDataDto> inputFileWatcherDataDtoList = new ArrayList<>();
         inputFileWatcherDataDtoList.add(
-                new FileWatcherDataDto("A_2018-03-28.json","ENTRY_CREATE"));
+                new FileWatcherDataDto("A_2018-03-28.json", "ENTRY_CREATE"));
         inputFileWatcherDataDtoList.add(
-                new FileWatcherDataDto("B_2018-03-28.json","ENTRY_CREATE"));
+                new FileWatcherDataDto("B_2018-03-28.json", "ENTRY_CREATE"));
         inputFileWatcherDataDtoList.add(
-                new FileWatcherDataDto("C_2018-03-28.json","ENTRY_CREATE"));
+                new FileWatcherDataDto("C_2018-03-28.json", "ENTRY_CREATE"));
         List<FileWatcherDataDto> outputFileWatcherDataDtoList
                 = tableDataBaseService.updateDataInDb(inputFileWatcherDataDtoList);
 
 
-        assertEquals(3,outputFileWatcherDataDtoList.size());
+        assertEquals(3, outputFileWatcherDataDtoList.size());
         assertTrue(outputFileWatcherDataDtoList.contains(
-                new FileWatcherDataDto("A_2018-03-28.json","ENTRY_CREATED")));
+                new FileWatcherDataDto("A_2018-03-28.json", "ENTRY_CREATED")));
         assertTrue(outputFileWatcherDataDtoList.contains(
-                new FileWatcherDataDto("B_2018-03-28.json","ENTRY_CREATED")));
+                new FileWatcherDataDto("B_2018-03-28.json", "ENTRY_CREATED")));
         assertTrue(outputFileWatcherDataDtoList.contains(
-                new FileWatcherDataDto("C_2018-03-28.json","ENTRY_CREATED")));
+                new FileWatcherDataDto("C_2018-03-28.json", "ENTRY_CREATED")));
 
 
-        when(jsonObjectReaderServiceMock.getBuyAndSellRate(dataOfTheDownloadedFilePropertiesDto.getFilePath(),"C_2018-03-30.json"))
+        when(jsonObjectReaderServiceMock.getBuyAndSellRate(dataOfTheDownloadedFilePropertiesDto.getFilePath(), "C_2018-03-30.json"))
                 .thenReturn(new BuyAndSellRate());
 
 
         inputFileWatcherDataDtoList.add(
-                new FileWatcherDataDto("C_2018-03-30.json","ENTRY_CREATE"));
+                new FileWatcherDataDto("C_2018-03-30.json", "ENTRY_CREATE"));
         inputFileWatcherDataDtoList.add(
-                new FileWatcherDataDto("C_2018-03-30.json","ENTRY_DELETE"));
+                new FileWatcherDataDto("C_2018-03-30.json", "ENTRY_DELETE"));
         outputFileWatcherDataDtoList
                 = tableDataBaseService.updateDataInDb(inputFileWatcherDataDtoList);
 
-        assertEquals(5,outputFileWatcherDataDtoList.size());
+        assertEquals(5, outputFileWatcherDataDtoList.size());
         assertTrue(outputFileWatcherDataDtoList.contains(
-                new FileWatcherDataDto("C_2018-03-30.json","ENTRY_CREATED")));
+                new FileWatcherDataDto("C_2018-03-30.json", "ENTRY_CREATED")));
         assertTrue(outputFileWatcherDataDtoList.contains(
-                new FileWatcherDataDto("C_2018-03-30.json","ENTRY_DELETED")));
+                new FileWatcherDataDto("C_2018-03-30.json", "ENTRY_DELETED")));
 
     }
 
@@ -107,47 +105,46 @@ public class TableDataBaseServiceTest {
 
         List<FileWatcherDataDto> inputFileWatcherDataDtoList = new ArrayList<>();
         inputFileWatcherDataDtoList.add(
-                new FileWatcherDataDto("_2018-03-28.json","ENTRY_CREATE"));
+                new FileWatcherDataDto("_2018-03-28.json", "ENTRY_CREATE"));
         inputFileWatcherDataDtoList.add(
-                new FileWatcherDataDto("B_2018-03-28.json","ENTRY_CREATES"));
+                new FileWatcherDataDto("B_2018-03-28.json", "ENTRY_CREATES"));
         inputFileWatcherDataDtoList.add(
-                new FileWatcherDataDto("C_2018-03-28.json","ENTRY_C"));
+                new FileWatcherDataDto("C_2018-03-28.json", "ENTRY_C"));
         List<FileWatcherDataDto> outputFileWatcherDataDtoList
                 = tableDataBaseService.updateDataInDb(inputFileWatcherDataDtoList);
 
-        assertEquals(3,outputFileWatcherDataDtoList.size());
+        assertEquals(3, outputFileWatcherDataDtoList.size());
         assertTrue(outputFileWatcherDataDtoList.contains(
-                new FileWatcherDataDto("WRONG_FILENAME","FILE_NOT_ADDED")));
+                new FileWatcherDataDto("WRONG_FILENAME", "FILE_NOT_ADDED")));
         assertTrue(outputFileWatcherDataDtoList.contains(
-                new FileWatcherDataDto("","WRONG_ENTRY")));
+                new FileWatcherDataDto("", "WRONG_ENTRY")));
         assertTrue(outputFileWatcherDataDtoList.contains(
-                new FileWatcherDataDto("","WRONG_ENTRY")));
+                new FileWatcherDataDto("", "WRONG_ENTRY")));
 
 
-
-        inputFileWatcherDataDtoList=new ArrayList<>();
-        outputFileWatcherDataDtoList=new ArrayList<>();
+        inputFileWatcherDataDtoList = new ArrayList<>();
+        outputFileWatcherDataDtoList = new ArrayList<>();
         inputFileWatcherDataDtoList.add(
-                new FileWatcherDataDto("C_2018-03-w0.json","ENTRY_CREATE"));
+                new FileWatcherDataDto("C_2018-03-w0.json", "ENTRY_CREATE"));
         inputFileWatcherDataDtoList.add(
-                new FileWatcherDataDto("C_2018-.json","ENTRY_CREATE"));
+                new FileWatcherDataDto("C_2018-.json", "ENTRY_CREATE"));
         inputFileWatcherDataDtoList.add(
-                new FileWatcherDataDto("C_2018-03-w0.jsox","ENTRY_CREATE"));
+                new FileWatcherDataDto("C_2018-03-w0.jsox", "ENTRY_CREATE"));
         inputFileWatcherDataDtoList.add(
-                new FileWatcherDataDto("x_2018-03-w0.jsox","ENTRY_CREATE"));
+                new FileWatcherDataDto("x_2018-03-w0.jsox", "ENTRY_CREATE"));
         inputFileWatcherDataDtoList.add(
-                new FileWatcherDataDto("C_2018-03-w0.jsonC_2018-03-w0.json","ENTRY_CREATE"));
+                new FileWatcherDataDto("C_2018-03-w0.jsonC_2018-03-w0.json", "ENTRY_CREATE"));
         outputFileWatcherDataDtoList
                 = tableDataBaseService.updateDataInDb(inputFileWatcherDataDtoList);
 
         int numberDuplicatedObjects = Collections.frequency(outputFileWatcherDataDtoList,
-                new FileWatcherDataDto("WRONG_FILENAME","FILE_NOT_ADDED"));
+                new FileWatcherDataDto("WRONG_FILENAME", "FILE_NOT_ADDED"));
 
         assertEquals(inputFileWatcherDataDtoList.size(), outputFileWatcherDataDtoList.size());
         assertEquals(5, outputFileWatcherDataDtoList.size());
-        assertEquals(5,numberDuplicatedObjects);
+        assertEquals(5, numberDuplicatedObjects);
         assertTrue(outputFileWatcherDataDtoList.contains(
-                new FileWatcherDataDto("WRONG_FILENAME","FILE_NOT_ADDED")));
+                new FileWatcherDataDto("WRONG_FILENAME", "FILE_NOT_ADDED")));
 
     }
 }

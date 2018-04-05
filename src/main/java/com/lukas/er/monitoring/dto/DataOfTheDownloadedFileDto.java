@@ -19,14 +19,12 @@ public class DataOfTheDownloadedFileDto {
     @Autowired
     private DataOfTheDownloadedFilePropertiesDto dataPropertiesDto;
 
-    public DataOfTheDownloadedFileDto(String filePath, String fileUrl)
-    {
+    public DataOfTheDownloadedFileDto(String filePath, String fileUrl) {
         this.file = filePath;
         this.url = fileUrl;
     }
 
-    public List<DataOfTheDownloadedFileDto> getDataDownloadedFiles()
-    {
+    public List<DataOfTheDownloadedFileDto> getDataDownloadedFiles() {
         List<DataOfTheDownloadedFileDto> dataOfTheDownloadedFileDtoList = new ArrayList<>();
         String[] tableNames = dataPropertiesDto.getTableNames();
 
@@ -34,14 +32,13 @@ public class DataOfTheDownloadedFileDto {
         String date = DateTimeFormatter.ofPattern("yyy-MM-dd").format(localDate);
 
 
-        for(int i=0; i<tableNames.length; i++)
-        {
-            url = this.dataPropertiesDto.getTableBaseUrl()+
+        for (int i = 0; i < tableNames.length; i++) {
+            url = this.dataPropertiesDto.getTableBaseUrl() +
                     tableNames[i];
-            file = dataPropertiesDto.getFilePath()+tableNames[i]+
-                    "_"+date+dataPropertiesDto.getFileType();
+            file = dataPropertiesDto.getFilePath() + tableNames[i] +
+                    "_" + date + dataPropertiesDto.getFileType();
             dataOfTheDownloadedFileDtoList.add(
-                    new DataOfTheDownloadedFileDto(file,url));
+                    new DataOfTheDownloadedFileDto(file, url));
         }
 
 
@@ -49,25 +46,22 @@ public class DataOfTheDownloadedFileDto {
     }
 
 
-    public List<DataOfTheDownloadedFileDto> getDataDownloadedFilesFromTheLastMonth()
-    {
+    public List<DataOfTheDownloadedFileDto> getDataDownloadedFilesFromTheLastMonth() {
         List<DataOfTheDownloadedFileDto> dataOfTheDownloadedFileDtoList = new ArrayList<>();
         String[] tableNames = dataPropertiesDto.getTableNames();
 
         LocalDate localDate = LocalDate.now();
         int lastNumberOfDays = 10;
-        for(int i=lastNumberOfDays; i>=0; i--)
-        {
+        for (int i = lastNumberOfDays; i >= 0; i--) {
             String startDate = DateTimeFormatter.ofPattern("yyy-MM-dd")
                     .format(localDate.minusDays(i));
-            for(int j=0; j<tableNames.length; j++)
-            {
-                url = this.dataPropertiesDto.getTableBaseUrl()+
-                        tableNames[j]+"/"+startDate;
-                file = dataPropertiesDto.getFilePath()+tableNames[j]+
-                        "_"+startDate+dataPropertiesDto.getFileType();
+            for (int j = 0; j < tableNames.length; j++) {
+                url = this.dataPropertiesDto.getTableBaseUrl() +
+                        tableNames[j] + "/" + startDate;
+                file = dataPropertiesDto.getFilePath() + tableNames[j] +
+                        "_" + startDate + dataPropertiesDto.getFileType();
                 dataOfTheDownloadedFileDtoList.add(
-                        new DataOfTheDownloadedFileDto(file,url));
+                        new DataOfTheDownloadedFileDto(file, url));
             }
         }
 

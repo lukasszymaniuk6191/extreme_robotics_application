@@ -15,7 +15,7 @@ import java.util.function.BiFunction;
 import static java.nio.file.StandardWatchEventKinds.*;
 
 @Service
-public class FileWatcherServiceImpl implements  FileWatcherService{
+public class FileWatcherServiceImpl implements FileWatcherService {
 
     private LoggerDto loggerDto = new LoggerDto(this.getClass());
     private WatchService watcher;
@@ -31,8 +31,7 @@ public class FileWatcherServiceImpl implements  FileWatcherService{
         this.path.register(watcher, ENTRY_CREATE, ENTRY_MODIFY, ENTRY_DELETE);
     }
 
-    public void setFileWatcherParams(WatchService watcher, Path logDir)
-    {
+    public void setFileWatcherParams(WatchService watcher, Path logDir) {
         this.watcher = watcher;
         this.path = logDir;
     }
@@ -52,22 +51,21 @@ public class FileWatcherServiceImpl implements  FileWatcherService{
             if (ENTRY_CREATE.equals(kind)) {
                 System.out.println("Entry was created on log dir.");
                 loggerDto.debug("Entry was created on log dir.");
-                fileWatcherDataDtoList.add(watchEventKindObjectBiFunction.apply(event,kind));
+                fileWatcherDataDtoList.add(watchEventKindObjectBiFunction.apply(event, kind));
             } else if (ENTRY_MODIFY.equals(kind)) {
                 System.out.println("Entry was modified on log dir.");
                 loggerDto.debug("Entry was modified on log dir.");
-                fileWatcherDataDtoList.add(watchEventKindObjectBiFunction.apply(event,kind));
+                fileWatcherDataDtoList.add(watchEventKindObjectBiFunction.apply(event, kind));
             } else if (ENTRY_DELETE.equals(kind)) {
                 System.out.println("Entry was deleted from log dir.");
                 loggerDto.debug("Entry was deleted from log dir.");
-                fileWatcherDataDtoList.add(watchEventKindObjectBiFunction.apply(event,kind));
+                fileWatcherDataDtoList.add(watchEventKindObjectBiFunction.apply(event, kind));
             }
         }
         key.reset();
 
-        return  fileWatcherDataDtoList;
+        return fileWatcherDataDtoList;
     }
-
 
 
 }

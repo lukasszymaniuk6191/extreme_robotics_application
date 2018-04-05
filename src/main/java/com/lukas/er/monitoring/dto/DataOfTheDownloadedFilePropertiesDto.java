@@ -25,16 +25,4 @@ public class DataOfTheDownloadedFilePropertiesDto {
     private String fileType;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 }

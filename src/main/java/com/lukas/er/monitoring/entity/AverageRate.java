@@ -26,8 +26,8 @@ public class AverageRate implements Serializable {
     private String no;
     private Date effectiveDate;
     private Date tableDate;
-    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-    @JoinColumn(name = "average_rate_id", referencedColumnName="id")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "average_rate_id", referencedColumnName = "id")
     private List<Rates> rates = new ArrayList<>();
     private String fileName;
 

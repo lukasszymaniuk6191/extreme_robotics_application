@@ -28,7 +28,9 @@ const browsersFile = require(path.resolve(__dirname, './sauce_browsers.json'))
 let jobsDone = 0
 let jobsSucceeded = 0
 
-const waitingCallback = (error, body, id) => {
+const waitingCallback = (error, body, id) =
+>
+{
   if (error) {
     console.error(error)
     process.exit(1)
@@ -36,11 +38,14 @@ const waitingCallback = (error, body, id) => {
 
   if (typeof body !== 'undefined') {
     if (!body.completed) {
-      setTimeout(() => {
-        jsUnitSaucelabs.getStatus(id, (error, body) => {
-          waitingCallback(error, body, id)
-        })
-      }, 2000)
+      setTimeout(() = > {
+        jsUnitSaucelabs.getStatus(id, (error, body) = > {
+        waitingCallback(error, body, id)
+      }
+    )
+    },
+      2000
+    )
     } else {
       const test = body['js tests'][0]
       let passed = false
@@ -82,29 +87,34 @@ const waitingCallback = (error, body, id) => {
   }
 }
 
-jsUnitSaucelabs.on('tunnelCreated', () => {
-  browsersFile.forEach((tmpBrowser) => {
-    const browsersPlatform = typeof tmpBrowser.platform === 'undefined' ? tmpBrowser.platformName : tmpBrowser.platform
-    const browsersArray = [browsersPlatform, tmpBrowser.browserName, tmpBrowser.version]
+jsUnitSaucelabs.on('tunnelCreated', () = > {
+  browsersFile.forEach((tmpBrowser) = > {
+  const browsersPlatform = typeof tmpBrowser.platform === 'undefined' ? tmpBrowser.platformName : tmpBrowser.platform
+  const browsersArray = [browsersPlatform, tmpBrowser.browserName, tmpBrowser.version]
 
-    jsUnitSaucelabs.start([browsersArray], testURL, 'qunit', (error, success) => {
-      if (typeof success !== 'undefined') {
-        const taskIds = success['js tests']
+  jsUnitSaucelabs.start([browsersArray], testURL, 'qunit', (error, success) = > {
+  if(typeof success !== 'undefined'
+)
+{
+  const taskIds = success['js tests']
 
-        if (!taskIds || taskIds.length === 0) {
-          throw new Error('Error starting tests through Sauce Labs API')
-        }
+  if (!taskIds || taskIds.length === 0) {
+    throw new Error('Error starting tests through Sauce Labs API')
+  }
 
-        taskIds.forEach((id) => {
-          jsUnitSaucelabs.getStatus(id, (error, body) => {
-            waitingCallback(error, body, id)
-          })
-        })
-      } else {
-        console.error(error)
-      }
-    })
-  })
+  taskIds.forEach((id) = > {
+    jsUnitSaucelabs.getStatus(id, (error, body) = > {
+    waitingCallback(error, body, id)
+  }
+)
+})
+}
+else
+{
+  console.error(error)
+}
+})
+})
 })
 
 jsUnitSaucelabs.initTunnel()

@@ -1,2 +1,2 @@
 /* global angular */
-var rootApp = angular.module("rootApp", ["averageRates","chart"]);
+var rootApp = angular.module("rootApp", ["averageRates", "chart"]);

@@ -47,8 +47,7 @@ public class RestApiControllerTest {
     public RestApiController restApiController;
 
     @Before
-    public void setUp()
-    {
+    public void setUp() {
         restApiController.setAverangeRatesRepository(averangeRatesRepositoryMock);
         restApiController.setBuyAndSellRateRepository(buyAndSellRateRepositoryMock);
         restApiController.setLinearRegressionService(linearRegressionServiceMock);
@@ -68,7 +67,7 @@ public class RestApiControllerTest {
                 .code("USD")
                 .mid("3.4177")
                 .build();
-        when( averangeRatesRepositoryMock.getAllAverageRateByDate(Date.valueOf("2018-04-04")))
+        when(averangeRatesRepositoryMock.getAllAverageRateByDate(Date.valueOf("2018-04-04")))
                 .thenReturn(Arrays.asList(rateDataDto_1, rateDataDto_2));
 
         mockMvc.perform(get("/api/current/average_rates/all"))
@@ -90,8 +89,7 @@ public class RestApiControllerTest {
     }
 
     @Test
-    public void  getDataAverageRatesByCodeAndDataRangeCorrectTest() throws Exception {
-
+    public void getDataAverageRatesByCodeAndDataRangeCorrectTest() throws Exception {
 
 
         RateDataDto rateDataDto_1 = RateDataDto.builder()
@@ -113,7 +111,7 @@ public class RestApiControllerTest {
                 .mid("3.4139")
                 .build();
 
-        when(averangeRatesRepositoryMock.getRateDataByCodeAndTableDateBetween("USD",Date.valueOf("2018-03-28"),Date.valueOf("2018-03-30")))
+        when(averangeRatesRepositoryMock.getRateDataByCodeAndTableDateBetween("USD", Date.valueOf("2018-03-28"), Date.valueOf("2018-03-30")))
                 .thenReturn(Arrays.asList(rateDataDto_1, rateDataDto_2, rateDataDto_3));
         when(linearRegressionServiceMock.calculateAverageRatelinearRegression(Arrays.asList(rateDataDto_1, rateDataDto_2, rateDataDto_3)))
                 .thenReturn(Arrays.asList(rateDataDto_1, rateDataDto_2, rateDataDto_3, rateDataDto_1, rateDataDto_3));
@@ -145,15 +143,15 @@ public class RestApiControllerTest {
                 .andExpect(jsonPath("$[2].mid").value("3.4139"));
 
         verify(averangeRatesRepositoryMock, times(1))
-                .getRateDataByCodeAndTableDateBetween("USD",Date.valueOf("2018-03-28"),Date.valueOf("2018-03-30"));
+                .getRateDataByCodeAndTableDateBetween("USD", Date.valueOf("2018-03-28"), Date.valueOf("2018-03-30"));
 
     }
 
     @Test
-    public void  getDataAverageRatesByCodeAndDataRangeIncorrectTest() throws Exception {
+    public void getDataAverageRatesByCodeAndDataRangeIncorrectTest() throws Exception {
 
-        when( averangeRatesRepositoryMock.getRateDataByCodeAndTableDateBetween
-                ("USD",Date.valueOf("2018-03-28"),Date.valueOf("2018-03-30")))
+        when(averangeRatesRepositoryMock.getRateDataByCodeAndTableDateBetween
+                ("USD", Date.valueOf("2018-03-28"), Date.valueOf("2018-03-30")))
                 .thenReturn(Arrays.asList(new RateDataDto()));
 
 
@@ -163,32 +161,32 @@ public class RestApiControllerTest {
         mockMvc.perform(get("/api/average_rates?code=USDq&startDate=2018-03-28&stopDate=2018-03-30"))
                 .andExpect(status().isBadRequest())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
-                .andExpect(jsonPath("errCode"). value("400"))
-                .andExpect(jsonPath("errClassName"). value("javax.validation.ConstraintViolationException"))
-                .andExpect(jsonPath("errMsg"). value("getAverageRatesByCodeAndDataRange.code: size must be between 3 and 3"));
+                .andExpect(jsonPath("errCode").value("400"))
+                .andExpect(jsonPath("errClassName").value("javax.validation.ConstraintViolationException"))
+                .andExpect(jsonPath("errMsg").value("getAverageRatesByCodeAndDataRange.code: size must be between 3 and 3"));
 
         mockMvc.perform(get("/api/average_rates?code=USD&startDate=2018-03-&stopDate=2018-03-30"))
                 .andExpect(status().isBadRequest())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
-                .andExpect(jsonPath("errCode"). value("400"))
-                .andExpect(jsonPath("errClassName"). value("javax.validation.ConstraintViolationException"))
-                .andExpect(jsonPath("errMsg"). value("getAverageRatesByCodeAndDataRange.startDate: Wrong date format"));
+                .andExpect(jsonPath("errCode").value("400"))
+                .andExpect(jsonPath("errClassName").value("javax.validation.ConstraintViolationException"))
+                .andExpect(jsonPath("errMsg").value("getAverageRatesByCodeAndDataRange.startDate: Wrong date format"));
 
         mockMvc.perform(get("/api/average_rates?code=USD&startDate=2018-03-28"))
                 .andExpect(status().isBadRequest())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
-                .andExpect(jsonPath("errCode"). value("400"))
-                .andExpect(jsonPath("errClassName"). value("org.springframework.web.bind.MissingServletRequestParameterException"))
-                .andExpect(jsonPath("errMsg"). value("Required String parameter 'stopDate' is not present"));
+                .andExpect(jsonPath("errCode").value("400"))
+                .andExpect(jsonPath("errClassName").value("org.springframework.web.bind.MissingServletRequestParameterException"))
+                .andExpect(jsonPath("errMsg").value("Required String parameter 'stopDate' is not present"));
 
         verify(averangeRatesRepositoryMock, times(1))
-                .getRateDataByCodeAndTableDateBetween("USD",Date.valueOf("2018-03-28"),Date.valueOf("2018-03-30"));
+                .getRateDataByCodeAndTableDateBetween("USD", Date.valueOf("2018-03-28"), Date.valueOf("2018-03-30"));
 
 
     }
 
     @Test
-    public void  getDataTradingRatesAllCorrectTest() throws Exception {
+    public void getDataTradingRatesAllCorrectTest() throws Exception {
         TradingRateDataDto tradingRateDataDto_1 = TradingRateDataDto.builder()
                 .tableDate(Date.valueOf("2018-04-04"))
                 .currency("dolar amerykański")
@@ -196,7 +194,7 @@ public class RestApiControllerTest {
                 .bid("3.3798")
                 .ask("3.448")
                 .build();
-        TradingRateDataDto tradingRateDataDto_2  = TradingRateDataDto.builder()
+        TradingRateDataDto tradingRateDataDto_2 = TradingRateDataDto.builder()
                 .tableDate(Date.valueOf("2018-04-04"))
                 .currency("dolar australijski")
                 .code("AUD")
@@ -205,7 +203,7 @@ public class RestApiControllerTest {
                 .build();
 
 
-        when( buyAndSellRateRepositoryMock.getAllTraidingRateByDate(Date.valueOf("2018-04-04")))
+        when(buyAndSellRateRepositoryMock.getAllTraidingRateByDate(Date.valueOf("2018-04-04")))
                 .thenReturn(Arrays.asList(tradingRateDataDto_1, tradingRateDataDto_2));
 
         mockMvc.perform(get("/api/current/trading_rates/all"))
@@ -229,7 +227,7 @@ public class RestApiControllerTest {
     }
 
     @Test
-    public void  getDataTraidingRatesByCodeAndDataRangeCorrectTest() throws Exception {
+    public void getDataTraidingRatesByCodeAndDataRangeCorrectTest() throws Exception {
 
 
         TradingRateDataDto tradingRateDataDto_1 = TradingRateDataDto.builder()
@@ -254,8 +252,8 @@ public class RestApiControllerTest {
                 .ask("3.4505")
                 .build();
 
-        when( buyAndSellRateRepositoryMock.getTradingRatesDataByCodeAndTableDateBetween
-                ("USD",Date.valueOf("2018-03-28"),Date.valueOf("2018-03-30")))
+        when(buyAndSellRateRepositoryMock.getTradingRatesDataByCodeAndTableDateBetween
+                ("USD", Date.valueOf("2018-03-28"), Date.valueOf("2018-03-30")))
                 .thenReturn(Arrays.asList(tradingRateDataDto_1, tradingRateDataDto_2, tradingRateDataDto_3));
         when(linearRegressionServiceMock.calculateTradingRateLinearRegression(Arrays.asList(tradingRateDataDto_1, tradingRateDataDto_2, tradingRateDataDto_3)))
                 .thenReturn(Arrays.asList(tradingRateDataDto_1, tradingRateDataDto_2, tradingRateDataDto_3, tradingRateDataDto_1));
@@ -288,15 +286,15 @@ public class RestApiControllerTest {
                 .andExpect(jsonPath("$[2].bid").value("3.3821"))
                 .andExpect(jsonPath("$[2].ask").value("3.4505"));
 
-                verify(buyAndSellRateRepositoryMock, times(1))
-                .getTradingRatesDataByCodeAndTableDateBetween("USD",Date.valueOf("2018-03-28"),Date.valueOf("2018-03-30"));
+        verify(buyAndSellRateRepositoryMock, times(1))
+                .getTradingRatesDataByCodeAndTableDateBetween("USD", Date.valueOf("2018-03-28"), Date.valueOf("2018-03-30"));
     }
 
     @Test
-    public void  getDataTraidingRatesByCodeAndDataRangeIncorrectTest() throws Exception {
+    public void getDataTraidingRatesByCodeAndDataRangeIncorrectTest() throws Exception {
 
-        when( buyAndSellRateRepositoryMock.getTradingRatesDataByCodeAndTableDateBetween
-                ("USD",Date.valueOf("2018-03-28"),Date.valueOf("2018-03-30")))
+        when(buyAndSellRateRepositoryMock.getTradingRatesDataByCodeAndTableDateBetween
+                ("USD", Date.valueOf("2018-03-28"), Date.valueOf("2018-03-30")))
                 .thenReturn(Arrays.asList(new TradingRateDataDto()));
 
 
@@ -306,33 +304,29 @@ public class RestApiControllerTest {
         mockMvc.perform(get("/api/trading_rates?code=USDq&startDate=2018-03-28&stopDate=2018-03-30"))
                 .andExpect(status().isBadRequest())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
-                .andExpect(jsonPath("errCode"). value("400"))
-                .andExpect(jsonPath("errClassName"). value("javax.validation.ConstraintViolationException"))
-                .andExpect(jsonPath("errMsg"). value("getDataTraidingRatesByCodeAndDataRange.code: size must be between 3 and 3"));
+                .andExpect(jsonPath("errCode").value("400"))
+                .andExpect(jsonPath("errClassName").value("javax.validation.ConstraintViolationException"))
+                .andExpect(jsonPath("errMsg").value("getDataTraidingRatesByCodeAndDataRange.code: size must be between 3 and 3"));
 
         mockMvc.perform(get("/api/trading_rates?code=USD&startDate=2018-03-&stopDate=2018-03-30"))
                 .andExpect(status().isBadRequest())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
-                .andExpect(jsonPath("errCode"). value("400"))
-                .andExpect(jsonPath("errClassName"). value("javax.validation.ConstraintViolationException"))
-                .andExpect(jsonPath("errMsg"). value("getDataTraidingRatesByCodeAndDataRange.startDate: Wrong date format"));
+                .andExpect(jsonPath("errCode").value("400"))
+                .andExpect(jsonPath("errClassName").value("javax.validation.ConstraintViolationException"))
+                .andExpect(jsonPath("errMsg").value("getDataTraidingRatesByCodeAndDataRange.startDate: Wrong date format"));
 
         mockMvc.perform(get("/api/trading_rates?code=USD&startDate=2018-03-28"))
                 .andExpect(status().isBadRequest())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
-                .andExpect(jsonPath("errCode"). value("400"))
-                .andExpect(jsonPath("errClassName"). value("org.springframework.web.bind.MissingServletRequestParameterException"))
-                .andExpect(jsonPath("errMsg"). value("Required String parameter 'stopDate' is not present"));
+                .andExpect(jsonPath("errCode").value("400"))
+                .andExpect(jsonPath("errClassName").value("org.springframework.web.bind.MissingServletRequestParameterException"))
+                .andExpect(jsonPath("errMsg").value("Required String parameter 'stopDate' is not present"));
 
         verify(buyAndSellRateRepositoryMock, times(1))
-                .getTradingRatesDataByCodeAndTableDateBetween("USD",Date.valueOf("2018-03-28"),Date.valueOf("2018-03-30"));
+                .getTradingRatesDataByCodeAndTableDateBetween("USD", Date.valueOf("2018-03-28"), Date.valueOf("2018-03-30"));
 
 
     }
-
-
-
-
 
 
 }

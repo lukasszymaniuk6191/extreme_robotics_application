@@ -1,1 +1,88 @@
-[{"table":"C","no":"066/C/NBP/2018","tradingDate":"2018-04-03","effectiveDate":"2018-04-04","rates":[{"currency":"dolar amerykański","code":"USD","bid":3.3977,"ask":3.4663},{"currency":"dolar australijski","code":"AUD","bid":2.6114,"ask":2.6642},{"currency":"dolar kanadyjski","code":"CAD","bid":2.6466,"ask":2.7000},{"currency":"euro","code":"EUR","bid":4.1650,"ask":4.2492},{"currency":"forint (Węgry)","code":"HUF","bid":0.013338,"ask":0.013608},{"currency":"frank szwajcarski","code":"CHF","bid":3.5436,"ask":3.6152},{"currency":"funt szterling","code":"GBP","bid":4.7690,"ask":4.8654},{"currency":"jen (Japonia)","code":"JPY","bid":0.031916,"ask":0.03256},{"currency":"korona czeska","code":"CZK","bid":0.1644,"ask":0.1678},{"currency":"korona duńska","code":"DKK","bid":0.5591,"ask":0.5703},{"currency":"korona norweska","code":"NOK","bid":0.4336,"ask":0.4424},{"currency":"korona szwedzka","code":"SEK","bid":0.4054,"ask":0.4136},{"currency":"SDR (MFW)","code":"XDR","bid":4.9147,"ask":5.0139}]}]
+[
+  {
+    "table": "C",
+    "no": "066/C/NBP/2018",
+    "tradingDate": "2018-04-03",
+    "effectiveDate": "2018-04-04",
+    "rates": [
+      {
+        "currency": "dolar amerykański",
+        "code": "USD",
+        "bid": 3.3977,
+        "ask": 3.4663
+      },
+      {
+        "currency": "dolar australijski",
+        "code": "AUD",
+        "bid": 2.6114,
+        "ask": 2.6642
+      },
+      {
+        "currency": "dolar kanadyjski",
+        "code": "CAD",
+        "bid": 2.6466,
+        "ask": 2.7000
+      },
+      {
+        "currency": "euro",
+        "code": "EUR",
+        "bid": 4.1650,
+        "ask": 4.2492
+      },
+      {
+        "currency": "forint (Węgry)",
+        "code": "HUF",
+        "bid": 0.013338,
+        "ask": 0.013608
+      },
+      {
+        "currency": "frank szwajcarski",
+        "code": "CHF",
+        "bid": 3.5436,
+        "ask": 3.6152
+      },
+      {
+        "currency": "funt szterling",
+        "code": "GBP",
+        "bid": 4.7690,
+        "ask": 4.8654
+      },
+      {
+        "currency": "jen (Japonia)",
+        "code": "JPY",
+        "bid": 0.031916,
+        "ask": 0.03256
+      },
+      {
+        "currency": "korona czeska",
+        "code": "CZK",
+        "bid": 0.1644,
+        "ask": 0.1678
+      },
+      {
+        "currency": "korona duńska",
+        "code": "DKK",
+        "bid": 0.5591,
+        "ask": 0.5703
+      },
+      {
+        "currency": "korona norweska",
+        "code": "NOK",
+        "bid": 0.4336,
+        "ask": 0.4424
+      },
+      {
+        "currency": "korona szwedzka",
+        "code": "SEK",
+        "bid": 0.4054,
+        "ask": 0.4136
+      },
+      {
+        "currency": "SDR (MFW)",
+        "code": "XDR",
+        "bid": 4.9147,
+        "ask": 5.0139
+      }
+    ]
+  }
+]

@@ -6,5 +6,6 @@ import java.util.List;
 public interface FileDownloaderService {
 
     boolean getPingStatus(String strURL);
+
     List<String> download() throws IOException;
 }

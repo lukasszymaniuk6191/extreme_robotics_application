@@ -14,7 +14,7 @@ public class DateValidator implements ConstraintValidator<ValidDate, String> {
         dateFormat.setLenient(false);
         try {
             dateFormat.parse(value.trim());
-            return  true;
+            return true;
         } catch (java.text.ParseException e) {
             return false;
         }

@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface LinearRegressionService {
     List<RateDataDto> calculateAverageRatelinearRegression(List<RateDataDto> rateDataDtoList) throws ParseException;
+
     List<TradingRateDataDto> calculateTradingRateLinearRegression(List<TradingRateDataDto> tradingRateDataDtoList) throws ParseException;
+
     void setPredictionNumberOfDays(int predictionNumberOfDays);
 }

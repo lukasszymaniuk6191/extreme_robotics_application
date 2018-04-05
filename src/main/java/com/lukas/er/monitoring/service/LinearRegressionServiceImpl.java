@@ -22,9 +22,9 @@ public class LinearRegressionServiceImpl implements LinearRegressionService {
     public List<RateDataDto> calculateAverageRatelinearRegression(List<RateDataDto> rateDataDtoList) throws ParseException {
         SimpleRegression simpleRegressionMid = new SimpleRegression();
 
-     RateDataDto rateDataDto = rateDataDtoList.get(rateDataDtoList.size() - 1);
+        RateDataDto rateDataDto = rateDataDtoList.get(rateDataDtoList.size() - 1);
 
-        for (int x = 1; x < (predictionNumberOfDays+1); x++) {
+        for (int x = 1; x < (predictionNumberOfDays + 1); x++) {
 
             double[][] historicalData = new double[rateDataDtoList.size()][2];
             int indexOfArray = 1;
@@ -55,7 +55,7 @@ public class LinearRegressionServiceImpl implements LinearRegressionService {
 
         TradingRateDataDto tradingRateDataDto = tradingRateDataDtoList.get(tradingRateDataDtoList.size() - 1);
 
-        for (int x = 1; x < (predictionNumberOfDays+1); x++) {
+        for (int x = 1; x < (predictionNumberOfDays + 1); x++) {
 
             double[][] historicalDataBid = new double[tradingRateDataDtoList.size()][2];
             double[][] historicalDataAsk = new double[tradingRateDataDtoList.size()][2];
@@ -79,8 +79,8 @@ public class LinearRegressionServiceImpl implements LinearRegressionService {
             simpleRegressionAsk.addData(historicalDataAsk);
 
             tradingRateDataDtoList.add(new TradingRateDataDto(Date.valueOf(addNumberOfDaysToCurrentDate(x))
-                    ,tradingRateDataDto.getCurrency(), tradingRateDataDto.getCode(),
-                    String.valueOf(simpleRegressionBid.predict(x)),String.valueOf(simpleRegressionAsk.predict(x))));
+                    , tradingRateDataDto.getCurrency(), tradingRateDataDto.getCode(),
+                    String.valueOf(simpleRegressionBid.predict(x)), String.valueOf(simpleRegressionAsk.predict(x))));
         }
 
         return tradingRateDataDtoList;
@@ -91,7 +91,6 @@ public class LinearRegressionServiceImpl implements LinearRegressionService {
         Calendar cal = Calendar.getInstance();
         cal.add(Calendar.DATE, i);
         SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
-
 
 
         return format1.format(cal.getTime());

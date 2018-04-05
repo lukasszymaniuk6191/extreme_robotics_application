@@ -10,7 +10,7 @@ import java.io.IOException;
 @EnableScheduling
 public class ExtremeRoboticsApplication {
 
-	public static void main(String[] args) throws IOException {
-		SpringApplication.run(ExtremeRoboticsApplication.class, args);
-	}
+    public static void main(String[] args) throws IOException {
+        SpringApplication.run(ExtremeRoboticsApplication.class, args);
+    }
 }

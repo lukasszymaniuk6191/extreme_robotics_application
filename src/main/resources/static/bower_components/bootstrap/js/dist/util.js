@@ -71,6 +71,7 @@ var Util = function ($) {
     selector = typeof $.escapeSelector === 'function' ? $.escapeSelector(selector).substr(1) : selector.replace(/(:|\.|\[|\]|,|=|@)/g, '\\$1');
     return selector;
   }
+
   /**
    * --------------------------------------------------------------------------
    * Public Util Api

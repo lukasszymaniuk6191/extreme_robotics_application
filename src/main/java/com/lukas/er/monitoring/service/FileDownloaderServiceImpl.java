@@ -18,15 +18,12 @@ public class FileDownloaderServiceImpl implements FileDownloaderService {
     private DataOfTheDownloadedFileDto dataOfTheDownloadedFileDto;
 
     @Autowired
-    public FileDownloaderServiceImpl(DataOfTheDownloadedFileDto dataOfTheDownloadedFileDto)
-    {
+    public FileDownloaderServiceImpl(DataOfTheDownloadedFileDto dataOfTheDownloadedFileDto) {
         this.dataOfTheDownloadedFileDto = dataOfTheDownloadedFileDto;
     }
 
 
-
-    public boolean getPingStatus(String strURL)
-    {
+    public boolean getPingStatus(String strURL) {
         boolean urlExist = false;
 
         HttpURLConnection connection = null;
@@ -52,25 +49,21 @@ public class FileDownloaderServiceImpl implements FileDownloaderService {
         List<String> statusList = new ArrayList<>();
         List<DataOfTheDownloadedFileDto> dataOfTheDownloadedFileDtoList = dataOfTheDownloadedFileDto.getDataDownloadedFiles();
 
-        for(int i=0; i<dataOfTheDownloadedFileDtoList.size(); i++)
-        {
-            if(this.getPingStatus(dataOfTheDownloadedFileDtoList.get(i).getUrl()))
-            {
+        for (int i = 0; i < dataOfTheDownloadedFileDtoList.size(); i++) {
+            if (this.getPingStatus(dataOfTheDownloadedFileDtoList.get(i).getUrl())) {
                 URL url = new URL(dataOfTheDownloadedFileDtoList.get(i).getUrl());
                 BufferedInputStream bis = new BufferedInputStream(url.openStream());
                 FileOutputStream fis = new FileOutputStream(dataOfTheDownloadedFileDtoList.get(i).getFile());
                 byte[] buffer = new byte[1024];
-                int count=0;
-                while((count = bis.read(buffer,0,1024)) != -1)
-                {
+                int count = 0;
+                while ((count = bis.read(buffer, 0, 1024)) != -1) {
                     fis.write(buffer, 0, count);
                 }
                 fis.close();
                 bis.close();
 
                 statusList.add("Correct url");
-            }
-            else {
+            } else {
                 statusList.add("Incorrect url");
             }
         }
